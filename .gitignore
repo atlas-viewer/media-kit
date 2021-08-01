@@ -1,0 +1,8 @@
+node_modules
+lib
+dist
+*.log
+*.tsbuildinfo
+.jest-cache
+stats.html
+storybook-static

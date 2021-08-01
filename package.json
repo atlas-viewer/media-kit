@@ -1,0 +1,54 @@
+{
+  "name": "@atlas-viewer/media-kit",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "web": "dist/index.umd.js",
+  "typings": "dist/types/index.d.ts",
+  "author": "Stephen Fraser <stephen.fraser@digirati.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c && tsc -p ./tsconfig.dist.json --emitDeclarationOnly",
+    "start": "rollup -c --watch",
+    "test": "jest",
+    "build-types": "tsc -p ./tsconfig.dist.json --emitDeclarationOnly",
+    "prepare": "NODE_ENV=production rollup -c && tsc -p ./tsconfig.dist.json --emitDeclarationOnly"
+  },
+  "dependencies": {},
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@ampproject/rollup-plugin-closure-compiler": "^0.26.0",
+    "@fesk/eslint-config-standard": "1.4.0-pr.b6dc2fa3",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-replace": "^3.0.0",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^12.20.18",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint": "^7.32.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2",
+    "rollup": "^2.55.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-visualizer": "^5.5.2",
+    "ts-jest": "^27.0.4",
+    "ts-node": "^10.1.0",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.5"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ]
+}

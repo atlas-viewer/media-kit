@@ -1,27 +1,13 @@
+# Media Kit
+
+**This repository is in early development**
+
+
 ```js
 const $el = document.create('audio');
 $el.src = 'http://example.org/music.mp3';
 
-const media = new Media('http://example.org/music.mp3');
-media.source({
-  play: $el.play.bind($el),
-  pause: $el.pause.bind($el),
-  ...
-})
-
-$el.addEventListener('play', () => {
-  media.dispatch('play');
-});
-
-$el.addEventListener('pause', () => {
-  media.dispatch('pause');
-});
-...
-
-$el.addEventListener('loadedmetadata', () => {
-  media.dispatch('loadedmetadata');
-  media.setDuration($el.duration);
-})
+const media = new MediaKit.HTMLAudio('http://example.org/music.mp3');
 
 const track = new Track();
 

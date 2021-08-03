@@ -38,6 +38,7 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "jest": "^27.0.6",
+    "mitt": "^3.0.0",
     "prettier": "^2.3.2",
     "rollup": "^2.55.1",
     "rollup-plugin-terser": "^7.0.2",

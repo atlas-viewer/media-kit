@@ -1,0 +1,66 @@
+<script src="./dist/index.umd.js"></script>
+
+<div id="test"></div>
+
+<div id="clock"></div>
+
+<button id="play">play</button>
+
+<script>
+
+    console.log(MediaKit);
+
+    const audio = new MediaKit.HTMLAudio('https://actions.google.com/sounds/v1/alarms/bugle_tune.ogg', {});
+
+    const media = new MediaKit.Media({
+        adapter: audio,
+        duration: 6.233
+    })
+
+
+    // Tracks don't auto pause and for some reason get into infinite loops.
+    const track = new MediaKit.Track();
+    track.addMedia(audio, {
+        source: {
+            start: 1,
+            end: 4
+        },
+        target: {
+            start: 2,
+            end: 5,
+        }
+    })
+
+
+    document.getElementById('test').appendChild(audio.$el);
+
+    const player = new MediaKit.Player(media);
+
+    const $play = document.getElementById('play');
+    const $clock = document.getElementById('clock');
+
+    player.on('pause', () => {
+        $play.innerText = 'play';
+    })
+    player.on('play', () => {
+        $play.innerText = 'pause';
+    })
+
+    $play.addEventListener('click', () => {
+        if (player.isPlaying) {
+            player.pause();
+        } else {
+            player.play();
+        }
+    })
+
+    const loop = () => {
+        $clock.innerText = `${player.currentTimeMs}`;
+
+        requestAnimationFrame(loop);
+    };
+
+    requestAnimationFrame(loop);
+
+</script>
+
